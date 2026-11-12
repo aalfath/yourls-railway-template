@@ -10,3 +10,7 @@ Read the entry before you apply an update in Railway.
 - Admin user `admin` (override with `YOURLS_USER`), password from the generated `YOURLS_PASS`.
 - `/` redirects to `/admin/`.
 - The template's MySQL service runs `mysql:8.4.13@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902` directly; it is not built from this repo.
+
+## Unreleased
+
+- README: Deploy on Railway button. No change to the running service.

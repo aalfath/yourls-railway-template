@@ -1,5 +1,7 @@
 # YOURLS on Railway
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/oovvkm?utm_medium=integration&utm_source=button&utm_campaign=yourls)
+
 Railway template for [YOURLS](https://github.com/YOURLS/YOURLS) (Your Own URL Shortener): short links with your own keywords, click statistics and an API.
 
 ## What it deploys
