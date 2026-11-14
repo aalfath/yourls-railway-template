@@ -1,6 +1,6 @@
 # YOURLS on Railway
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/oovvkm?utm_medium=integration&utm_source=button&utm_campaign=yourls)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/Z5PZxH?utm_medium=integration&utm_source=button&utm_campaign=yourls)
 
 Railway template for [YOURLS](https://github.com/YOURLS/YOURLS) (Your Own URL Shortener): short links with your own keywords, click statistics and an API.
 
@@ -10,7 +10,7 @@ Two services:
 
 - **YOURLS**, built from this repo's `Dockerfile`:
   - YOURLS **1.10.6**, the official Apache image pinned by digest: `yourls:1.10.6-apache@sha256:3631239a8cc0f3911f0cdae00f5475f48a65b9f2c9f120ba137766bba28c945c`.
-  - A Railway domain on port 8080, health check `/admin/`, restart on failure (all but the domain in `railway.json`).
+  - A Railway domain on port 8080, health check `/admin/` and restart on failure (up to 10 times). These settings are part of the template itself. The repo has no `railway.json`, because Railway stops reading it on 2026-12-01.
 - **MySQL** 8.4 LTS, the official image `mysql:8.4.13@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902`, with its data on a Railway volume at `/var/lib/mysql`. On its first start it creates the `yourls` database and user. It runs the image directly and is not built from this repo.
 
 On every start, `10-railway-install.sh` waits for MySQL and, if the YOURLS tables don't exist yet, creates them before Apache starts. So the public URL never shows the "Install YOURLS" page. `railway-start.sh` sets the defaults below, refuses to start without a password and cookie key, and makes sure Apache runs with only the `prefork` MPM.

@@ -14,3 +14,4 @@ Read the entry before you apply an update in Railway.
 ## Unreleased
 
 - README: Deploy on Railway button. No change to the running service.
+- Removed `railway.json`, which Railway stops reading on 2026-12-01. The health check `/admin/` and the restart policy now come from the template, so a running service behaves the same.
